@@ -12,9 +12,9 @@ public class GeneradorExpensa {
     private AdminGastos adminGastos;
     private EstrategiaDeDivision estrategiaDeDivision;
 
-    public void generarExpensas(Administrador administrador, EstrategiaDeDivision estrategiaDeDivision, int mes, int anio){
+    public void generarExpensas(Administrador administrador, EstrategiaDeDivision estrategiaDeDivision, int mes, int anio, String token){
         /** AGREGAR EL ORDEN DE LOS PASOS **/
-        this.estrategiaDeDivision.dividirExpensa(this.consorcio.getUnidadesFuncionales(), this.consorcio.getReserva(), this.adminGastos.calcularGastosDelMes());
+        this.estrategiaDeDivision.dividirExpensa(this.consorcio.getUnidadesFuncionales(), this.consorcio.obtenerSaldo(token), this.adminGastos.calcularGastosDelMes());
     }
 
     public void cambiarEstrategia(EstrategiaDeDivision estrategiaDeDivision){

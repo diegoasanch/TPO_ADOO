@@ -13,11 +13,11 @@ public class Consorcio {
 
     private AdapterConexionBancaria cuentaBancaria;
     private List<UnidadFuncional> unidadesFuncionales;
-    private float reserva;
     private List<RegistroGeneracionExpensa> registrosDeGeneracion;
+    private String cbu;
 
-    public void obtenerSaldo(String cbu, String token){
-        this.reserva = this.cuentaBancaria.conectarConBanco(cbu, new Date(), token);
+    public float obtenerSaldo(String token){
+        return this.cuentaBancaria.conectarConBanco(this.cbu, new Date(), token);
     }
 
     public void agregarRegistroDeGeneracion(Administrador administrador, EstrategiaDeDivision criterio){

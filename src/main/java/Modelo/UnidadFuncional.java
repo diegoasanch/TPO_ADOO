@@ -1,4 +1,4 @@
-package modelo;
+package Modelo;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UnidadFuncional {
-    private Comunicador contactoInteresado
-    private float porcentaje
-    private List<ExpensaPorUnidadFuncional> expensa
+    private Comunicador contactoInteresado;
+    private float porcentaje;
+    //private List<ExpensaPorUnidadFuncional> expensa;
 
     public void notificarExpensa() {
         // TODO: implementar

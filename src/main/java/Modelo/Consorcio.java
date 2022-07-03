@@ -15,6 +15,7 @@ public class Consorcio {
     private List<UnidadFuncional> unidadesFuncionales;
     private List<RegistroGeneracionExpensa> registrosDeGeneracion;
     private String cbu;
+    private List<Gasto> gastos;
 
     public float obtenerSaldo(String token){
         return this.cuentaBancaria.conectarConBanco(this.cbu, new Date(), token);
@@ -22,6 +23,11 @@ public class Consorcio {
 
     public void agregarRegistroDeGeneracion(Administrador administrador, EstrategiaDeDivision criterio){
         // TODO: Hacer
+    }
+
+    public float calcularGastosDelMes(){
+        // TODO: Hacer
+        return 0.12f;
     }
 
 

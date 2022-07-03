@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CuentaBancaria implements AdapterConexionBancaria{
 
-    private static float saldo;
+    private final static float saldo = 5000f;
 
     @Override
     public float conectarConBanco(String cbu, Date fecha, String token) {

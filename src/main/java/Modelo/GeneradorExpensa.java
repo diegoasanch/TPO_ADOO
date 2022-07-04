@@ -13,8 +13,8 @@ public class GeneradorExpensa {
 
     public void generarExpensas(Administrador administrador, EstrategiaDeDivision estrategiaDeDivision, int mes, int anio, String token){
         float saldo = this.consorcio.obtenerSaldo(token);
-        float gastos = this.consorcio.calcularGastosDelMes();
-        this.estrategiaDeDivision.dividirExpensa(this.consorcio.getUnidadesFuncionales(), saldo, gastos);
+        GastosDelMes gastos = this.consorcio.calcularGastosDelMes();
+        this.estrategiaDeDivision.dividirExpensa(this.consorcio.getUnidadesFuncionales(), gastos, saldo);
     }
 
     public void cambiarEstrategia(EstrategiaDeDivision estrategiaDeDivision){

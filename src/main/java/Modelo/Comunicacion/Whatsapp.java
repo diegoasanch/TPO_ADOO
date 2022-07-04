@@ -1,4 +1,4 @@
-package Modelo.Comunicador;
+package Modelo.Comunicacion;
 
 import Modelo.TipoDeMensaje;
 

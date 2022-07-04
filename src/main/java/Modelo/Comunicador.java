@@ -1,12 +1,10 @@
-package Modelo.Comunicador;
-
-import Modelo.TipoDeMensaje;
+package Modelo;
 
 public class Comunicador {
     private TipoDeMensaje tipoDeMensaje;
     private String direccion;
 
-    Comunicador(String direccion, TipoDeMensaje tipoDeMensaje) {
+    public Comunicador(String direccion, TipoDeMensaje tipoDeMensaje) {
         this.direccion = direccion;
         this.tipoDeMensaje = tipoDeMensaje;
     }

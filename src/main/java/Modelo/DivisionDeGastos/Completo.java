@@ -14,6 +14,9 @@ public class Completo implements EstrategiaDeDivision{
             float ordinariosPorUnidadFuncional = gastos.getGastosOrdinariosTotales() * unidad.getPorcentaje();
             float extraordinariosPorUnidadFuncional = gastos.getGastosExtraordinariosTotales() * unidad.getPorcentaje();
             unidad.anadirExpensa(ordinariosPorUnidadFuncional,extraordinariosPorUnidadFuncional,deuda);
+            unidad.notificarExpensa();
         }
+
+
     }
 }

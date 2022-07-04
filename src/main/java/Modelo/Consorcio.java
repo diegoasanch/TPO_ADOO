@@ -4,6 +4,7 @@ import Modelo.DivisionDeGastos.EstrategiaDeDivision;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -18,22 +19,23 @@ public class Consorcio {
     private String cbu;
     private List<Gasto> gastos;
 
-    public Consorcio(AdapterConexionBancaria cuentaBancaria) {
-        this.cuentaBancaria = cuentaBancaria;
+    public Consorcio() {
+        this.unidadesFuncionales = new ArrayList<>();
+        this.registrosDeGeneracion = new ArrayList<>();
+        this.gastos = new ArrayList<>();
     }
 
-    public float obtenerSaldo(String token){
-        return this.cuentaBancaria.conectarConBanco(this.cbu, new Date(), token);
+    public float obtenerSaldo(String token, Date fecha){
+        return this.cuentaBancaria.conectarConBanco(this.cbu, fecha, token);
     }
 
     public void agregarRegistroDeGeneracion(Administrador administrador, EstrategiaDeDivision criterio){
-        // TODO: Hacer
+        RegistroGeneracionExpensa registro = new RegistroGeneracionExpensa();
+        registro.setAdministrador(administrador);
+        registro.setCriterio(criterio);
+        this.registrosDeGeneracion.add(registro);
     }
 
-//    public float calcularGastosDelMes(){
-//        // TODO: Hacer
-//        return 0.12f;
-//    }
 
     public void agregarGastos(Gasto ... gastos){
         Collections.addAll(this.gastos, gastos);

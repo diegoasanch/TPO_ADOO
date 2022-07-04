@@ -16,6 +16,7 @@ public class GenerarFondo implements EstrategiaDeDivision{
             float ordinariosPorUnidadFuncional = gastos.getGastosOrdinariosTotales() * unidad.getPorcentaje();
             float extraordinariosPorUnidadFuncional = gastos.getGastosExtraordinariosTotales() * unidad.getPorcentaje();
             unidad.anadirExpensa(ordinariosPorUnidadFuncional,extraordinariosPorUnidadFuncional,fondoDeReservaPorUnidad + deuda);
+            unidad.notificarExpensa();
         }
     }
 }

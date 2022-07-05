@@ -9,17 +9,18 @@ import java.util.List;
 @Getter
 @Setter
 public class UnidadFuncional {
-    private Comunicador contactoInteresado;
+    private Comunicador comunicador;
     private float porcentaje;
     private List<ExpensaPorUnidadFuncional> expensas;
+    private Interesado interesado;
 
-    public UnidadFuncional(Comunicador contactoInteresado) {
-        this.contactoInteresado = contactoInteresado;
+    public UnidadFuncional(Comunicador comunicador) {
+        this.comunicador = comunicador;
         this.expensas = new ArrayList<>();
     }
 
-    public void notificarExpensa() {
-        this.contactoInteresado.notificar("Nueva expensa");
+    public void notificarExpensa(ExpensaPorUnidadFuncional expensa) {
+        this.comunicador.notificar(expensa.toString(), this.interesado);
     }
 
     public void anadirExpensa(float valorOrdinario, float valorExtraordinario, float extra) {
@@ -30,7 +31,7 @@ public class UnidadFuncional {
 
         expensas.add(nuevaExpensa);
 
-        this.notificarExpensa();
+        this.notificarExpensa(nuevaExpensa);
     }
 
     public float getDeuda(){
@@ -40,7 +41,17 @@ public class UnidadFuncional {
                 deuda += expensa.getTotal();
         return deuda;
 
+    }
+
+    public List<ExpensaPorUnidadFuncional> getExpensasPorEstadoPagado (boolean estado){
+        List<ExpensaPorUnidadFuncional> expensasPagadas = new ArrayList<>();
+        for (ExpensaPorUnidadFuncional expensa : expensas){
+            if (expensa.isPagado() == estado)
+                expensasPagadas.add(expensa);
         }
 
+        return expensasPagadas;
     }
+
+}
 

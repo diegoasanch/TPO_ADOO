@@ -4,10 +4,13 @@ import Modelo.DivisionDeGastos.EstrategiaDeDivision;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -25,7 +28,7 @@ public class Consorcio {
         this.gastos = new ArrayList<>();
     }
 
-    public float obtenerSaldo(String token, Date fecha){
+    public float obtenerSaldo(String token, LocalDate fecha){
         return this.cuentaBancaria.conectarConBanco(this.cbu, fecha, token);
     }
 
@@ -41,12 +44,12 @@ public class Consorcio {
         Collections.addAll(this.gastos, gastos);
     }
 
-    public GastosDelMes calcularGastosDelMes(){
+    public GastosDelMes calcularGastosDelMes(int anio, int mes){
         GastosDelMes gastosDelMes = new GastosDelMes();
         float gastosOrdinarios = 0f;
         float gastosExtraordinarios = 0f;
 
-        for (Gasto gasto : gastos){
+        for (Gasto gasto : gastos.stream().filter(p -> p.getFecha().getMonth() == LocalDate.of(anio,mes,1).getMonth()).collect(Collectors.toList())){
             if (gasto.esOrdinaria())
                 gastosOrdinarios += gasto.getMonto();
             else

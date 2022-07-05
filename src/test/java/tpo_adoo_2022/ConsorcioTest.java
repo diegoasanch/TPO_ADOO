@@ -6,7 +6,8 @@ import Modelo.DivisionDeGastos.EstrategiaDeDivision;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 
 import static org.mockito.Mockito.*;
@@ -15,9 +16,6 @@ public class ConsorcioTest {
 
 
     private AdapterConexionBancaria cuentaBancaria;
-
-    private RegistroGeneracionExpensa registroGeneracionExpensa;
-
 
     private static final String token = "028643";
 
@@ -30,7 +28,6 @@ public class ConsorcioTest {
         this.cuentaBancaria = mock(CuentaBancaria.class);
         this.gasto1 = mock(Gasto.class);
         this.gasto2 = mock(Gasto.class);
-        this.registroGeneracionExpensa = mock(RegistroGeneracionExpensa.class);
 
 
     }
@@ -40,12 +37,14 @@ public class ConsorcioTest {
         Consorcio consorcio = new Consorcio();
         consorcio.agregarGastos(gasto1,gasto2);
 
+        when(this.gasto1.getFecha()).thenReturn(LocalDate.of(2022,6,12));
+        when(this.gasto2.getFecha()).thenReturn(LocalDate.of(2022,6,12));
         when(this.gasto1.esOrdinaria()).thenReturn(true);
         when(this.gasto1.getMonto()).thenReturn(500.00f);
         when(this.gasto2.esOrdinaria()).thenReturn(false);
         when(this.gasto2.getMonto()).thenReturn(10000.00f);
 
-        GastosDelMes valorActual = consorcio.calcularGastosDelMes();
+        GastosDelMes valorActual = consorcio.calcularGastosDelMes(2022,6);
 
         Assertions.assertEquals(10000.00f, valorActual.getGastosExtraordinariosTotales());
         Assertions.assertEquals(500.00f, valorActual.getGastosOrdinariosTotales());
@@ -58,7 +57,7 @@ public class ConsorcioTest {
         consorcio.setCbu(cbu);
         consorcio.setCuentaBancaria(cuentaBancaria);
 
-        Date diaDeHoy = new Date();
+        LocalDate diaDeHoy = LocalDate.now();
 
         when(this.cuentaBancaria.conectarConBanco(cbu, diaDeHoy, token)).thenReturn(600.00f);
 

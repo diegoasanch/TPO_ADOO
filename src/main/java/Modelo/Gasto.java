@@ -3,7 +3,7 @@ package Modelo;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.*;
 
 @Getter
 @Setter
@@ -13,9 +13,13 @@ public class Gasto {
     private TipoDeGasto tipo;
     private boolean recurrencia;
     private float monto;
-    private Date fecha;
+    private LocalDate fecha;
 
     public Gasto() {
-        this.fecha = new Date();
+        this.fecha = LocalDate.now();
+    }
+
+    public boolean esOrdinaria(){
+        return expensa == TipoDeExpensa.Ordinaria;
     }
 }

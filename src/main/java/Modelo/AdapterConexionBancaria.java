@@ -1,8 +1,8 @@
 package Modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface AdapterConexionBancaria {
 
-    float conectarConBanco(String cbu, Date fecha, String token);
+    float conectarConBanco(String cbu, LocalDate fecha, String token);
 }

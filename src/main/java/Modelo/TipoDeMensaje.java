@@ -1,5 +1,5 @@
 package Modelo;
 
 public interface TipoDeMensaje {
-    void enviar(String mensaje, String direccion);
+    void enviar(String mensaje, Interesado interesado);
 }

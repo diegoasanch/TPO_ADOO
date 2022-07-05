@@ -1,37 +1,57 @@
 package Modelo;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import Modelo.Comunicador.Comunicador;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 public class UnidadFuncional {
-    private Comunicador contactoInteresado;
+    private Comunicador comunicador;
     private float porcentaje;
-    private List<ExpensaPorUnidadFuncional> expensa;
+    private List<ExpensaPorUnidadFuncional> expensas;
+    private Interesado interesado;
 
-    UnidadFuncional(Comunicador contactoInteresado) {
-        this.contactoInteresado = contactoInteresado;
-        this.porcentaje = this.porcentaje;
-        this.expensa = new ArrayList<>();
+    public UnidadFuncional(Comunicador comunicador) {
+        this.comunicador = comunicador;
+        this.expensas = new ArrayList<>();
     }
 
-    public void notificarExpensa() {
-        this.contactoInteresado.notificar("Nueva expensa");
+    public void notificarExpensa(ExpensaPorUnidadFuncional expensa) {
+        this.comunicador.notificar(expensa.toString(), this.interesado);
     }
 
-    public void anadirExpensa(float valorOrdinario, float valorExtraordinario) {
+    public void anadirExpensa(float valorOrdinario, float valorExtraordinario, float extra) {
         ExpensaPorUnidadFuncional nuevaExpensa = new ExpensaPorUnidadFuncional(
-            new Date() ,
             valorOrdinario,
-            valorExtraordinario);
+            valorExtraordinario,
+            extra);
 
-        expensa.add(nuevaExpensa);
+        expensas.add(nuevaExpensa);
+
+        this.notificarExpensa(nuevaExpensa);
+    }
+
+    public float getDeuda(){
+        float deuda = 0f;
+        for (ExpensaPorUnidadFuncional expensa : expensas)
+            if (!expensa.isPagado())
+                deuda += expensa.getTotal();
+        return deuda;
+
+    }
+
+    public List<ExpensaPorUnidadFuncional> getExpensasPorEstadoPagado (boolean estado){
+        List<ExpensaPorUnidadFuncional> expensasPagadas = new ArrayList<>();
+        for (ExpensaPorUnidadFuncional expensa : expensas){
+            if (expensa.isPagado() == estado)
+                expensasPagadas.add(expensa);
+        }
+
+        return expensasPagadas;
     }
 
 }
+

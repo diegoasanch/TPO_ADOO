@@ -14,7 +14,7 @@ public class ConFondo implements EstrategiaDeDivision{
             float deuda = unidad.getDeuda();
             float ordinariosPorUnidadFuncional = gastos.getGastosOrdinariosTotales() * unidad.getPorcentaje();
             float extraordinariosPorUnidadFuncional = gastos.getGastosExtraordinariosTotales() * unidad.getPorcentaje();
-            unidad.anadirExpensa(ordinariosPorUnidadFuncional,extraordinariosPorUnidadFuncional,fondoDeReservaPorUnidad + deuda);
+            unidad.anadirExpensa(ordinariosPorUnidadFuncional,extraordinariosPorUnidadFuncional,-fondoDeReservaPorUnidad + deuda);
         }
     }
 }

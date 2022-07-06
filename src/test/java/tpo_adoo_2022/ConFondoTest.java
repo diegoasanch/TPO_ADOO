@@ -59,8 +59,8 @@ public class ConFondoTest {
 
         criterio.dividirExpensa(unidadFuncionales,gastos,saldo);
 
-        verify(this.unidadA).anadirExpensa(gastosOrdinarios * porcentajeUnidadA,gastosExtraordinarios * porcentajeUnidadA, fondoDeReservaPorUnidad + deudaUnidadA);
+        verify(this.unidadA).anadirExpensa(gastosOrdinarios * porcentajeUnidadA,gastosExtraordinarios * porcentajeUnidadA, -fondoDeReservaPorUnidad + deudaUnidadA);
 
-        verify(this.unidadB).anadirExpensa(gastosOrdinarios * porcentajeUnidadB,gastosExtraordinarios * porcentajeUnidadB, fondoDeReservaPorUnidad + deudaUnidadB);
+        verify(this.unidadB).anadirExpensa(gastosOrdinarios * porcentajeUnidadB,gastosExtraordinarios * porcentajeUnidadB, -fondoDeReservaPorUnidad + deudaUnidadB);
     }
 }

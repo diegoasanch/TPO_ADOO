@@ -1,6 +1,9 @@
 package tpo_adoo_2022;
 
 import Modelo.*;
+import Modelo.Comunicacion.Adapters.AdapterEmail;
+import Modelo.Comunicacion.Adapters.AdapterSMS;
+import Modelo.Comunicacion.Adapters.AdapterWhatsapp;
 import Modelo.Comunicacion.Email;
 import Modelo.Comunicacion.Sms;
 import Modelo.Comunicacion.Whatsapp;
@@ -38,6 +41,10 @@ public class IntergacionTest {
     private Comunicador comunicadorA;
     private Comunicador comunicadorB;
 
+    private AdapterWhatsapp adapterWhatsapp;
+    private AdapterSMS adapterSMS;
+    private AdapterEmail adapterEmail;
+
     private TipoDeMensaje whatsapp;
     private TipoDeMensaje sms;
     private TipoDeMensaje email;
@@ -54,9 +61,13 @@ public class IntergacionTest {
         this.cuentaBancaria = mock(CuentaBancaria.class);
 
         //INSTANCIAS
-        this.whatsapp = new Whatsapp();
-        this.sms = new Sms();
-        this.email = new Email();
+        this.adapterWhatsapp = new AdapterWhatsapp();
+        this.adapterSMS = new AdapterSMS();
+        this.adapterEmail = new AdapterEmail();
+
+        this.whatsapp = new Whatsapp(this.adapterWhatsapp);
+        this.sms = new Sms(this.adapterSMS);
+        this.email = new Email(this.adapterEmail);
 
         this.completo = new Completo();
         this.conFondo = new ConFondo();

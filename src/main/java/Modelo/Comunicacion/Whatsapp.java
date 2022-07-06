@@ -1,12 +1,20 @@
 package Modelo.Comunicacion;
 
+import Modelo.Comunicacion.Adapters.IAdapterWhatsapp;
 import Modelo.Interesado;
 import Modelo.TipoDeMensaje;
 
 public class Whatsapp implements TipoDeMensaje{
+
+
+    private IAdapterWhatsapp adapter;
+
+    public  Whatsapp(IAdapterWhatsapp adapter) {
+        this.adapter = adapter;
+    }
+
     @Override
     public void enviar(String mensaje, Interesado interesado) {
-        System.out.println("Enviando mensaje Whatsapp a " + interesado.getTelefono() + ": " + mensaje);
-        // TODO: Adaptar un proveedor (maybe?)
+        this.adapter.enviar(mensaje,interesado);
     }
 }

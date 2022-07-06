@@ -2,10 +2,10 @@ package tpo_adoo_2022;
 
 import static org.mockito.Mockito.*;
 
-import Modelo.Comunicador;
-import Modelo.ExpensaPorUnidadFuncional;
-import Modelo.Interesado;
-import Modelo.UnidadFuncional;
+import Modelo.Comunicacion.Comunicador;
+import Modelo.UnidadFuncional.ExpensaPorUnidadFuncional;
+import Modelo.UnidadFuncional.Interesado;
+import Modelo.UnidadFuncional.UnidadFuncional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

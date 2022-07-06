@@ -1,6 +1,6 @@
 package Modelo.Comunicacion.Adapters;
 
-import Modelo.Interesado;
+import Modelo.UnidadFuncional.Interesado;
 
 public class AdapterWhatsapp implements IAdapterWhatsapp{
     @Override

@@ -1,7 +1,6 @@
-package Modelo;
+package Modelo.Bancaria;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class CuentaBancaria implements AdapterConexionBancaria{
 

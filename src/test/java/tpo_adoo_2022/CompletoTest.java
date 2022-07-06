@@ -2,8 +2,8 @@ package tpo_adoo_2022;
 
 import Modelo.DivisionDeGastos.Completo;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
-import Modelo.GastosDelMes;
-import Modelo.UnidadFuncional;
+import Modelo.Gastos.GastosDelMes;
+import Modelo.UnidadFuncional.UnidadFuncional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

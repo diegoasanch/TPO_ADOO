@@ -1,8 +1,12 @@
 package tpo_adoo_2022;
 
 import Modelo.*;
+import Modelo.Bancaria.AdapterConexionBancaria;
+import Modelo.Bancaria.CuentaBancaria;
 import Modelo.DivisionDeGastos.Completo;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
+import Modelo.Gastos.Gasto;
+import Modelo.Gastos.GastosDelMes;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

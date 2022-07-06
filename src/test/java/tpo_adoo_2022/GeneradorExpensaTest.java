@@ -5,6 +5,7 @@ import Modelo.DivisionDeGastos.Completo;
 import Modelo.DivisionDeGastos.ConFondo;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
 import Modelo.DivisionDeGastos.GenerarFondo;
+import Modelo.Gastos.GastosDelMes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

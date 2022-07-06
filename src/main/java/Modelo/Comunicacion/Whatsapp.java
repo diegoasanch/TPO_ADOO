@@ -1,8 +1,7 @@
 package Modelo.Comunicacion;
 
 import Modelo.Comunicacion.Adapters.IAdapterWhatsapp;
-import Modelo.Interesado;
-import Modelo.TipoDeMensaje;
+import Modelo.UnidadFuncional.Interesado;
 
 public class Whatsapp implements TipoDeMensaje{
 

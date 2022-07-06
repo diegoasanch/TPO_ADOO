@@ -1,25 +1,27 @@
 package tpo_adoo_2022;
 
 import Modelo.*;
+import Modelo.Bancaria.AdapterConexionBancaria;
+import Modelo.Bancaria.CuentaBancaria;
+import Modelo.Comunicacion.*;
 import Modelo.Comunicacion.Adapters.AdapterEmail;
 import Modelo.Comunicacion.Adapters.AdapterSMS;
 import Modelo.Comunicacion.Adapters.AdapterWhatsapp;
-import Modelo.Comunicacion.Email;
-import Modelo.Comunicacion.Sms;
-import Modelo.Comunicacion.Whatsapp;
 import Modelo.DivisionDeGastos.Completo;
 import Modelo.DivisionDeGastos.ConFondo;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
 import Modelo.DivisionDeGastos.GenerarFondo;
+import Modelo.Gastos.Gasto;
+import Modelo.Gastos.TipoDeExpensa;
+import Modelo.Gastos.TipoDeGasto;
+import Modelo.UnidadFuncional.Interesado;
+import Modelo.UnidadFuncional.UnidadFuncional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

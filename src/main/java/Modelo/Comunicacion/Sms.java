@@ -1,8 +1,7 @@
 package Modelo.Comunicacion;
 
 import Modelo.Comunicacion.Adapters.IAdapterSMS;
-import Modelo.Interesado;
-import Modelo.TipoDeMensaje;
+import Modelo.UnidadFuncional.Interesado;
 
 public class Sms implements TipoDeMensaje {
     private IAdapterSMS adapter;

@@ -1,5 +1,6 @@
-package Modelo;
+package Modelo.UnidadFuncional;
 
+import Modelo.Comunicacion.Comunicador;
 import lombok.Getter;
 import lombok.Setter;
 

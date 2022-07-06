@@ -1,7 +1,7 @@
 package Modelo.DivisionDeGastos;
 
-import Modelo.GastosDelMes;
-import Modelo.UnidadFuncional;
+import Modelo.Gastos.GastosDelMes;
+import Modelo.UnidadFuncional.UnidadFuncional;
 
 import java.util.List;
 

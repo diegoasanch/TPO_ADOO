@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Bancaria;
 
 import java.time.LocalDate;
 

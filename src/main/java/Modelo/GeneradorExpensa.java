@@ -2,6 +2,7 @@ package Modelo;
 
 import Modelo.DivisionDeGastos.Completo;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
+import Modelo.Gastos.GastosDelMes;
 import lombok.Getter;
 import lombok.Setter;
 

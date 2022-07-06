@@ -1,7 +1,7 @@
-package Modelo;
+package Modelo.Comunicacion;
 
 import Modelo.Comunicacion.Adapters.AdapterEmail;
-import Modelo.Comunicacion.Email;
+import Modelo.UnidadFuncional.Interesado;
 
 public class Comunicador {
     private TipoDeMensaje tipoDeMensaje;

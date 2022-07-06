@@ -1,14 +1,16 @@
 package Modelo;
 
+import Modelo.Bancaria.AdapterConexionBancaria;
 import Modelo.DivisionDeGastos.EstrategiaDeDivision;
+import Modelo.Gastos.Gasto;
+import Modelo.Gastos.GastosDelMes;
+import Modelo.UnidadFuncional.UnidadFuncional;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

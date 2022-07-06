@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.UnidadFuncional;
 
 import lombok.Getter;
 import lombok.Setter;
